@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,20 @@ namespace Car_Racing_Game_MOO_ICT
             game.Show();
             this.Close();
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name = textBoxRacer.Text;
+
+
+            Racer player = new Racer(name);
+            if (player.AlreadyExists(name) == true)
+            {
+                player.renewCoins(name);
+            }
+            Garage garage = new Garage(player);
+            garage.Show();
+            this.Close();
+        }
     }
 }

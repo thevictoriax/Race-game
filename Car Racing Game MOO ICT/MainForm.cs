@@ -33,5 +33,12 @@ namespace Car_Racing_Game_MOO_ICT
             racer.Show();
             this.Hide();
         }
+
+        private void garagebutton_Click(object sender, EventArgs e)
+        {
+            Login racer = new Login();
+            racer.Show();
+            this.Hide();
+        }
     }
 }

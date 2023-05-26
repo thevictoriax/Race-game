@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playbutton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.garagebutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,15 +69,16 @@
             this.playbutton.UseVisualStyleBackColor = true;
             this.playbutton.Click += new System.EventHandler(this.playbutton_Click);
             // 
-            // button2
+            // garagebutton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(265, 267);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 58);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Garage";
-            this.button2.UseVisualStyleBackColor = true;
+            this.garagebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.garagebutton.Location = new System.Drawing.Point(265, 267);
+            this.garagebutton.Name = "garagebutton";
+            this.garagebutton.Size = new System.Drawing.Size(242, 58);
+            this.garagebutton.TabIndex = 3;
+            this.garagebutton.Text = "Garage";
+            this.garagebutton.UseVisualStyleBackColor = true;
+            this.garagebutton.Click += new System.EventHandler(this.garagebutton_Click);
             // 
             // button1
             // 
@@ -93,9 +94,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(814, 476);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.garagebutton);
             this.Controls.Add(this.playbutton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -113,7 +114,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button playbutton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button garagebutton;
         private System.Windows.Forms.Button button1;
     }
 }
