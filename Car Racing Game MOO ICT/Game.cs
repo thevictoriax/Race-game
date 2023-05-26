@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Car_Racing_Game_MOO_ICT
 {
     public partial class Game : Form
     {
-
+        public Racer Racer { get; set; }
+        //public string racerName;
         int roadSpeed;
         int trafficSpeed;
         int playerSpeed = 12;
-        int score;
+        //int score;
         int carImage;
         bool coinVisible = false;
-        int collectedCoins = 0;
+        //int collectedCoins = 0;
+        bool endOfTHeGame = false;
         List<Point> coinPositions = new List<Point>();
 
 
@@ -30,13 +34,18 @@ namespace Car_Racing_Game_MOO_ICT
 
         bool goleft, goright;
 
+       
 
-        public Game()
+        public Game(Racer racer)
         {
+            Racer= racer;
+
             InitializeComponent();
 
             ResetGame();
         }
+
+       
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -66,9 +75,9 @@ namespace Car_Racing_Game_MOO_ICT
         private void gameTimerEvent(object sender, EventArgs e)
         {
 
-            txtScore.Text = "Score: " + score;
-            score++;
-            txtCoins.Text = "Coins: " + collectedCoins;
+            txtScore.Text = "Score: " + Racer.Points;
+            Racer.Points++;
+            txtCoins.Text = "Coins: " + Racer.Coins;
             //collectedCoins++;
 
 
@@ -112,20 +121,20 @@ namespace Car_Racing_Game_MOO_ICT
                 gameOver();
             }
 
-            if (score > 40 && score < 500)
+            if (Racer.Points > 40 && Racer.Points < 500)
             {
                 award.Image = Properties.Resources.bronze;
             }
 
 
-            if (score > 500 && score < 2000)
+            if (Racer.Points > 500 && Racer.Points < 2000)
             {
                 award.Image = Properties.Resources.silver;
                 roadSpeed = 20;
                 trafficSpeed = 22;
             }
 
-            if (score > 2000)
+            if (Racer.Points > 2000)
             {
                 award.Image = Properties.Resources.gold;
                 trafficSpeed = 27;
@@ -134,7 +143,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             if (coinVisible && player.Bounds.IntersectsWith(coin.Bounds))
             {
-                collectedCoins++;
+                Racer.Coins++;
                 coinVisible = false;
             }
 
@@ -162,7 +171,7 @@ namespace Car_Racing_Game_MOO_ICT
 
                     if (player.Bounds.IntersectsWith(coin.Bounds))
                     {
-                        collectedCoins++;
+                        Racer.Coins++;
                         coinPositions.RemoveAt(i);
                         break;
                     }
@@ -179,10 +188,14 @@ namespace Car_Racing_Game_MOO_ICT
 
                 if (player.Bounds.IntersectsWith(coin.Bounds))
                 {
-                    collectedCoins++;
+                    Racer.Coins++;
                     coinPositions.Remove(position);
                     break;
                 }
+            }
+            if(endOfTHeGame == true)
+            {
+                Racer.AddToFile();
             }
         }
         private void GenerateCoinPosition()
@@ -252,7 +265,7 @@ namespace Car_Racing_Game_MOO_ICT
                 tempCar.Left = carPosition.Next(406, 423);
             }
 
-            if (rand.Next(0, 5) == 0) // Adjust the probability of a coin appearing
+            if (rand.Next(0, 3) == 0) // Adjust the probability of a coin appearing
             {
                 coinPositions.Add(new Point(tempCar.Left, tempCar.Top));
             }
@@ -271,6 +284,7 @@ namespace Car_Racing_Game_MOO_ICT
             award.BringToFront();
 
             btnStart.Enabled = true;
+            endOfTHeGame = true;
 
 
 
@@ -285,7 +299,7 @@ namespace Car_Racing_Game_MOO_ICT
             award.Visible = false;
             goleft = false;
             goright = false;
-            score = 0;
+            Racer.Points = 0;
             award.Image = Properties.Resources.bronze;
             coinVisible = false;
 
@@ -348,5 +362,6 @@ namespace Car_Racing_Game_MOO_ICT
 
             return false;
         }
+        
     }
 }

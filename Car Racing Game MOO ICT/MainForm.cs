@@ -29,8 +29,8 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void playbutton_Click(object sender, EventArgs e)
         {
-            Game game = new Game();
-            game.Show();
+            Login racer = new Login();
+            racer.Show();
             this.Hide();
         }
     }
