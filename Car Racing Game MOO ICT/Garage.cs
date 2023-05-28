@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,8 +78,25 @@ namespace Car_Racing_Game_MOO_ICT
             }
         }
 
-        private void BuyCar(Racer racer, int carPrice)
+        public void BuyCar(Racer racer, int carPrice)
         {
+
+            
+            if (carPrice == 5 && racer.CheckCarExists("Ford F150")== true)
+            {
+                MessageBox.Show("You already own this car!");
+                return;
+            }
+            else if (carPrice == 100 && racer.CheckCarExists("Ford Mustang"))
+            {
+                MessageBox.Show("You already own this car!");
+                return;
+            }
+            else if (carPrice == 300 && racer.CheckCarExists("Lotus F1"))
+            {
+                MessageBox.Show("You already own this car!");
+                return;
+            }
             if (racer.Coins >= carPrice)
             {
                 // Perform buy car logic here
@@ -92,21 +110,27 @@ namespace Car_Racing_Game_MOO_ICT
                 if (carPrice == 5)
                 {
                     selectedCarValue = 1; // Ford F150
+                    racer.PurchasedCars.Add("Ford F150");
                 }
                 else if (carPrice == 100)
                 {
                     selectedCarValue = 2; // Ford Mustang
+                    racer.PurchasedCars.Add("Ford Mustang");
                 }
                 else if (carPrice == 300)
                 {
                     selectedCarValue = 3; // Lotus F1
+                    racer.PurchasedCars.Add("Lotus F1");
                 }
+
+                racer.AddCarsToFile(); // Write the purchased cars to the file
             }
             else
             {
                 MessageBox.Show("Insufficient coins to buy the car!");
             }
         }
+
 
 
         private void CarDialog_CarPurchased(object sender, EventArgs e)

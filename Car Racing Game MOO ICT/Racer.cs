@@ -17,12 +17,14 @@ namespace Car_Racing_Game_MOO_ICT
 
         public int Coins { get; set; }
 
-        
+        public List<string> PurchasedCars { get; set; }
+
         public Racer(string name = "")
         {
             Name = name;
             Points = 0;
             Coins= 0;
+            PurchasedCars = new List<string>();
         }
         public void AddToFile()
         {
@@ -36,6 +38,23 @@ namespace Car_Racing_Game_MOO_ICT
             using (StreamWriter sw = File.AppendText(file))
             {
                 sw.WriteLine($"{Name},{Points},{Coins}");
+            }
+        }
+        public void AddCarsToFile()
+        {
+            var all_path = Path.Combine(Directory.GetCurrentDirectory());
+            string delete_path = all_path.Substring(all_path.Length - 10);
+            string path = all_path.Replace(delete_path, "");
+
+            string file = path + "\\RacersGarage.txt";
+            string[] lines = File.ReadAllLines(file);
+            if (PurchasedCars.Count > 0)
+            {
+                using (StreamWriter sw = File.AppendText(file))
+                {
+                    string cars = string.Join(", ", PurchasedCars);
+                    sw.WriteLine($"{Name},{cars}");
+                }
             }
         }
         public bool AlreadyExists(string name)
@@ -75,6 +94,29 @@ namespace Car_Racing_Game_MOO_ICT
                 }
             }
             //return coins;
+        }
+        public bool CheckCarExists(string carName)
+        {
+            var all_path = Path.Combine(Directory.GetCurrentDirectory());
+            string delete_path = all_path.Substring(all_path.Length - 10);
+            string path = all_path.Replace(delete_path, "");
+            string file = path + "\\RacersGarage.txt";
+            string[] lines = File.ReadAllLines(file);
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(',');
+                if (parts.Length >= 2 && parts[0] == Name)
+                {
+                    string ownedCar = parts[1].Trim();
+                    if (ownedCar == carName)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
