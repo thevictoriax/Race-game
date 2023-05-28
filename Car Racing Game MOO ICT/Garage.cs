@@ -85,16 +85,21 @@ namespace Car_Racing_Game_MOO_ICT
             if (carPrice == 5 && racer.CheckCarExists("Ford F150")== true)
             {
                 MessageBox.Show("You already own this car!");
+                selectedCarValue = 1;
                 return;
             }
             else if (carPrice == 100 && racer.CheckCarExists("Ford Mustang"))
             {
                 MessageBox.Show("You already own this car!");
+                selectedCarValue = 2;
+
                 return;
             }
             else if (carPrice == 300 && racer.CheckCarExists("Lotus F1"))
             {
                 MessageBox.Show("You already own this car!");
+                selectedCarValue = 3;
+
                 return;
             }
             if (racer.Coins >= carPrice)
