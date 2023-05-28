@@ -32,6 +32,8 @@ namespace Car_Racing_Game_MOO_ICT
             Login racer = new Login();
             racer.Show();
             this.Hide();
+            
+
         }
 
         private void garagebutton_Click(object sender, EventArgs e)
@@ -39,6 +41,8 @@ namespace Car_Racing_Game_MOO_ICT
             Login racer = new Login();
             racer.Show();
             this.Hide();
+            
+
         }
     }
 }

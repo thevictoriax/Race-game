@@ -53,7 +53,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             // Create cancel button
             cancelButton = new Button();
-            cancelButton.Text = "Choose";
+            cancelButton.Text = "Cancel";
             cancelButton.Location = new Point(150, 120);
             cancelButton.Click += CancelButton_Click;
             this.Controls.Add(cancelButton);
@@ -87,6 +87,24 @@ namespace Car_Racing_Game_MOO_ICT
 
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CarInfoDialog
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "CarInfoDialog";
+            this.Load += new System.EventHandler(this.CarInfoDialog_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void CarInfoDialog_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

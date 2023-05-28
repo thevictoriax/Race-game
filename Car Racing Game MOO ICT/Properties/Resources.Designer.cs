@@ -22,7 +22,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Car_Racing_Game_MOO_ICT.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,17 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3306 {
+        public static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _3306 {
             get {
                 object obj = ResourceManager.GetObject("3306", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +83,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _33061 {
+        public static System.Drawing.Bitmap _33061 {
             get {
                 object obj = ResourceManager.GetObject("33061", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +93,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ambulance {
+        public static System.Drawing.Bitmap ambulance {
             get {
                 object obj = ResourceManager.GetObject("ambulance", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +103,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_1_0 {
+        public static System.Drawing.Bitmap background_1_0 {
             get {
                 object obj = ResourceManager.GetObject("background-1_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +113,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bronze {
+        public static System.Drawing.Bitmap bronze {
             get {
                 object obj = ResourceManager.GetObject("bronze", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +123,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BSicon_RACE_svg {
+        public static System.Drawing.Bitmap BSicon_RACE_svg {
             get {
                 object obj = ResourceManager.GetObject("BSicon_RACE.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +133,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car1 {
+        public static System.Drawing.Bitmap car1 {
             get {
                 object obj = ResourceManager.GetObject("car1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +143,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car2 {
+        public static System.Drawing.Bitmap car2 {
             get {
                 object obj = ResourceManager.GetObject("car2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +153,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car3 {
+        public static System.Drawing.Bitmap car3 {
             get {
                 object obj = ResourceManager.GetObject("car3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +163,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carGreen {
+        public static System.Drawing.Bitmap carGreen {
             get {
                 object obj = ResourceManager.GetObject("carGreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +173,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carGrey {
+        public static System.Drawing.Bitmap carGrey {
             get {
                 object obj = ResourceManager.GetObject("carGrey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +183,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carOrange {
+        public static System.Drawing.Bitmap carOrange {
             get {
                 object obj = ResourceManager.GetObject("carOrange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +193,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carPink {
+        public static System.Drawing.Bitmap carPink {
             get {
                 object obj = ResourceManager.GetObject("carPink", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +203,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CarRed {
+        public static System.Drawing.Bitmap CarRed {
             get {
                 object obj = ResourceManager.GetObject("CarRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +213,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carYellow {
+        public static System.Drawing.Bitmap carYellow {
             get {
                 object obj = ResourceManager.GetObject("carYellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +223,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap coin {
+        public static System.Drawing.Bitmap coin {
             get {
                 object obj = ResourceManager.GetObject("coin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +233,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap explosion {
+        public static System.Drawing.Bitmap explosion {
             get {
                 object obj = ResourceManager.GetObject("explosion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +243,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap formula {
+        public static System.Drawing.Bitmap formula {
             get {
                 object obj = ResourceManager.GetObject("formula", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +253,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gold {
+        public static System.Drawing.Bitmap gold {
             get {
                 object obj = ResourceManager.GetObject("gold", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +263,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream hit {
+        public static System.IO.UnmanagedMemoryStream hit {
             get {
                 return ResourceManager.GetStream("hit", resourceCulture);
             }
@@ -262,7 +272,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mustang__2_ {
+        public static System.Drawing.Bitmap mustang__2_ {
             get {
                 object obj = ResourceManager.GetObject("mustang (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -272,7 +282,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap My_project {
+        public static System.Drawing.Bitmap My_project {
             get {
                 object obj = ResourceManager.GetObject("My project", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -282,7 +292,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap roadTrack {
+        public static System.Drawing.Bitmap roadTrack {
             get {
                 object obj = ResourceManager.GetObject("roadTrack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -292,7 +302,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap silver {
+        public static System.Drawing.Bitmap silver {
             get {
                 object obj = ResourceManager.GetObject("silver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -300,9 +310,18 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream track {
+            get {
+                return ResourceManager.GetStream("track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap truck {
+        public static System.Drawing.Bitmap truck {
             get {
                 object obj = ResourceManager.GetObject("truck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -312,7 +331,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TruckBlue {
+        public static System.Drawing.Bitmap TruckBlue {
             get {
                 object obj = ResourceManager.GetObject("TruckBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -322,7 +341,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TruckWhite {
+        public static System.Drawing.Bitmap TruckWhite {
             get {
                 object obj = ResourceManager.GetObject("TruckWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

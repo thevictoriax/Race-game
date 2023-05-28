@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Car_Racing_Game_MOO_ICT
 {
@@ -28,19 +22,23 @@ namespace Car_Racing_Game_MOO_ICT
         List<Point> coinPositions = new List<Point>();
 
         private int selectedCarValue = 0;
+        private int awardValue = 0;
 
         private Garage garage;
         Random rand = new Random();
         Random carPosition = new Random();
 
         bool goleft, goright;
+        private SoundPlayer soundPlayer;
 
 
 
         public Game(Racer racer)
         {
             Racer = racer;
-
+            //this.Width = 835;
+            //this.Height = 1008;
+            soundPlayer = new SoundPlayer();
             InitializeComponent();
 
             ResetGame();
@@ -62,10 +60,7 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 player.Image = Properties.Resources.car3;
             }
-            else if (carName == 0)
-            {
-                player.Image = Properties.Resources.ambulance;
-            }
+            
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -125,6 +120,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             AI1.Top += trafficSpeed;
             AI2.Top += trafficSpeed;
+            //AI3.Top += trafficSpeed;
 
 
             if (AI1.Top > 530)
@@ -137,6 +133,11 @@ namespace Car_Racing_Game_MOO_ICT
                 changeAIcars(AI2);
             }
 
+            //if (AI3.Top > 530)
+            //{
+            //    changeAIcars(AI2);
+            //}
+
             if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
             {
                 gameOver();
@@ -145,6 +146,7 @@ namespace Car_Racing_Game_MOO_ICT
             if (Racer.Points > 40 && Racer.Points < 500)
             {
                 award.Image = Properties.Resources.bronze;
+                awardValue = 3;
             }
 
 
@@ -153,6 +155,8 @@ namespace Car_Racing_Game_MOO_ICT
                 award.Image = Properties.Resources.silver;
                 roadSpeed = 20;
                 trafficSpeed = 22;
+                awardValue = 2;
+
             }
 
             if (Racer.Points > 2000)
@@ -160,6 +164,8 @@ namespace Car_Racing_Game_MOO_ICT
                 award.Image = Properties.Resources.gold;
                 trafficSpeed = 27;
                 roadSpeed = 25;
+                awardValue = 1;
+
             }
 
             if (coinVisible && player.Bounds.IntersectsWith(coin.Bounds))
@@ -301,17 +307,33 @@ namespace Car_Racing_Game_MOO_ICT
 
             award.Visible = true;
             award.BringToFront();
+            if (awardValue == 3)
+            {
+                Racer.Coins += 10;
+            }
+            else if (awardValue == 2) 
+            {
+                Racer.Coins += 30;
+
+            }
+            else
+            {
+                Racer.Coins += 60;
+
+            }
 
             btnStart.Enabled = true;
             endOfTHeGame = true;
 
-
+            soundPlayer.Stop();
 
 
         }
 
         private void ResetGame()
         {
+            //System.Media.SoundPlayer playTrack = new System.Media.SoundPlayer(Properties.Resources.track);
+            //playTrack.Play();
 
             btnStart.Enabled = false;
             explosion.Visible = false;
@@ -331,6 +353,9 @@ namespace Car_Racing_Game_MOO_ICT
 
             AI2.Top = carPosition.Next(200, 500) * -1;
             AI2.Left = carPosition.Next(406, 423);
+
+            //AI3.Top = carPosition.Next(200, 500) * -1;
+            //AI3.Left = carPosition.Next(397, 455);
 
             GenerateCoinPosition();
 
@@ -356,6 +381,7 @@ namespace Car_Racing_Game_MOO_ICT
         private void Form1_Load(object sender, EventArgs e)
         {
             //coin.Visible = false;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -369,6 +395,12 @@ namespace Car_Racing_Game_MOO_ICT
             playCrash.Play();
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool CoinCollidesWithCars(Point coinPosition)
         {
             foreach (Point position in coinPositions)
@@ -381,26 +413,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             return false;
         }
-        //private void Garage_CarSelected(object sender, int carValue)
-        //{
-        //    // Update the player's car based on the selected car value
-        //    if (carValue == 1)
-        //    {
-        //        player.Image = Properties.Resources.car1;
-        //    }
-        //    else if (carValue == 2)
-        //    {
-        //        player.Image = Properties.Resources.car2;
-        //    }
-        //    else if (carValue == 3)
-        //    {
-        //        player.Image = Properties.Resources.car3;
-        //    }
-        //    else if (carValue == 0)
-        //    {
-        //        player.Image = Properties.Resources.ambulance;
-        //    }
-        //}
+        
 
 
     }
