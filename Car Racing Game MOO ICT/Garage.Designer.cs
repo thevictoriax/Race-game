@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCoins = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtCoins = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -44,6 +45,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtCoins);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -54,6 +56,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1343, 703);
             this.panel1.TabIndex = 1;
+            // 
+            // txtCoins
+            // 
+            this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCoins.Location = new System.Drawing.Point(1136, 110);
+            this.txtCoins.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtCoins.Name = "txtCoins";
+            this.txtCoins.Size = new System.Drawing.Size(181, 46);
+            this.txtCoins.TabIndex = 5;
+            this.txtCoins.Text = "Coins: 0";
+            this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -114,16 +127,16 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
-            // txtCoins
+            // button1
             // 
-            this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCoins.Location = new System.Drawing.Point(1136, 110);
-            this.txtCoins.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtCoins.Name = "txtCoins";
-            this.txtCoins.Size = new System.Drawing.Size(181, 46);
-            this.txtCoins.TabIndex = 5;
-            this.txtCoins.Text = "Coins: 0";
-            this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1168, 417);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 49);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Garage
             // 
@@ -153,5 +166,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label txtCoins;
+        private System.Windows.Forms.Button button1;
     }
 }

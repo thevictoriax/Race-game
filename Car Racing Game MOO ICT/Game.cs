@@ -21,31 +21,51 @@ namespace Car_Racing_Game_MOO_ICT
         int playerSpeed = 12;
         //int score;
         int carImage;
+        int carName;
         bool coinVisible = false;
         //int collectedCoins = 0;
         bool endOfTHeGame = false;
         List<Point> coinPositions = new List<Point>();
 
+        private int selectedCarValue = 0;
 
-
-
+        private Garage garage;
         Random rand = new Random();
         Random carPosition = new Random();
 
         bool goleft, goright;
 
-       
+
 
         public Game(Racer racer)
         {
-            Racer= racer;
+            Racer = racer;
 
             InitializeComponent();
 
             ResetGame();
         }
+        public void changePlayerCar(Garage garage)
+        {
+            int carName = garage.GetSelectedCarValue();
 
-       
+            if (carName == 1)
+            {
+                player.Image = Properties.Resources.car1;
+            }
+            else if (carName == 2)
+            {
+                player.Image = Properties.Resources.car2;
+            }
+            else if (carName == 3)
+            {
+                player.Image = Properties.Resources.car3;
+            }
+            else if (carName == 0)
+            {
+                player.Image = Properties.Resources.ambulance;
+            }
+        }
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -193,7 +213,7 @@ namespace Car_Racing_Game_MOO_ICT
                     break;
                 }
             }
-            if(endOfTHeGame == true)
+            if (endOfTHeGame == true)
             {
                 Racer.AddToFile();
             }
@@ -244,10 +264,8 @@ namespace Car_Racing_Game_MOO_ICT
                 case 7:
                     tempCar.Image = Properties.Resources.carYellow;
                     break;
+
                 case 8:
-                    tempCar.Image = Properties.Resources.TruckBlue;
-                    break;
-                case 9:
                     tempCar.Image = Properties.Resources.TruckWhite;
                     break;
             }
@@ -362,6 +380,27 @@ namespace Car_Racing_Game_MOO_ICT
 
             return false;
         }
-        
+        //private void Garage_CarSelected(object sender, int carValue)
+        //{
+        //    // Update the player's car based on the selected car value
+        //    if (carValue == 1)
+        //    {
+        //        player.Image = Properties.Resources.car1;
+        //    }
+        //    else if (carValue == 2)
+        //    {
+        //        player.Image = Properties.Resources.car2;
+        //    }
+        //    else if (carValue == 3)
+        //    {
+        //        player.Image = Properties.Resources.car3;
+        //    }
+        //    else if (carValue == 0)
+        //    {
+        //        player.Image = Properties.Resources.ambulance;
+        //    }
+        //}
+
+
     }
 }
