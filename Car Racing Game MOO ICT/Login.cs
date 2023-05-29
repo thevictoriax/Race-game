@@ -19,25 +19,19 @@ namespace Car_Racing_Game_MOO_ICT
            
 
         public Login()
-        {
-            //this.Name = Name;
-           
+        {  
             InitializeComponent();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-           
 
-            //string racer = textBoxRacer.Text;
         }
 
         private void Start_Click(object sender, EventArgs e)
-        {
-
+        { 
             string name = textBoxRacer.Text;
             
-
             Racer player = new Racer(name);
             if (player.AlreadyExists(name) == true)
             {
@@ -51,7 +45,6 @@ namespace Car_Racing_Game_MOO_ICT
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBoxRacer.Text;
-
 
             Racer player = new Racer(name);
             if (player.AlreadyExists(name) == true)

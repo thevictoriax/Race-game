@@ -9,15 +9,12 @@ namespace Car_Racing_Game_MOO_ICT
     public partial class Game : Form
     {
         public Racer Racer { get; set; }
-        //public string racerName;
         int roadSpeed;
         int trafficSpeed;
         int playerSpeed = 12;
-        //int score;
         int carImage;
         int carName;
         bool coinVisible = false;
-        //int collectedCoins = 0;
         bool endOfTHeGame = false;
         List<Point> coinPositions = new List<Point>();
 
@@ -36,8 +33,6 @@ namespace Car_Racing_Game_MOO_ICT
         public Game(Racer racer)
         {
             Racer = racer;
-            //this.Width = 835;
-            //this.Height = 1008;
             soundPlayer = new SoundPlayer();
             InitializeComponent();
 
@@ -94,7 +89,6 @@ namespace Car_Racing_Game_MOO_ICT
             txtScore.Text = "Score: " + Racer.Points;
             Racer.Points++;
             txtCoins.Text = "Coins: " + Racer.Coins;
-            //collectedCoins++;
 
 
             if (goleft == true && player.Left > 147)
@@ -205,9 +199,6 @@ namespace Car_Racing_Game_MOO_ICT
                 }
             }
 
-            // ...
-
-            // Draw the coins on the road
             foreach (Point position in coinPositions)
             {
                 coin.Location = position;
@@ -229,7 +220,7 @@ namespace Car_Racing_Game_MOO_ICT
         {
             coinPositions.Clear();
 
-            for (int i = 0; i < 10; i++) // Adjust the number of coins as needed
+            for (int i = 0; i < 10; i++) // Adjust the number of coins 
             {
                 Point coinPosition;
 
@@ -368,9 +359,6 @@ namespace Car_Racing_Game_MOO_ICT
 
             gameTimer.Start();
 
-
-
-
         }
 
         private void restartGame(object sender, EventArgs e)
@@ -380,14 +368,11 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //coin.Visible = false;
+            
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void playSound()
         {
@@ -396,10 +381,6 @@ namespace Car_Racing_Game_MOO_ICT
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private bool CoinCollidesWithCars(Point coinPosition)
         {

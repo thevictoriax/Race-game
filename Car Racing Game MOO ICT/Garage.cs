@@ -40,12 +40,6 @@ namespace Car_Racing_Game_MOO_ICT
             carDialog.CarPurchased += (s, args) => BuyCar(Racer, carDialog.Price);
             DialogResult result = carDialog.ShowDialog();
 
-            if (result != DialogResult.OK)
-            {
-                // User clicked the "Cancel" button or closed the dialog
-                // Perform further actions if needed
-            }
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -55,12 +49,6 @@ namespace Car_Racing_Game_MOO_ICT
 
             carDialog.CarPurchased += (s, args) => BuyCar(Racer, carDialog.Price);
             DialogResult result = carDialog.ShowDialog();
-
-            if (result != DialogResult.OK)
-            {
-                // User clicked the "Cancel" button or closed the dialog
-                // Perform further actions if needed
-            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -70,19 +58,12 @@ namespace Car_Racing_Game_MOO_ICT
 
             carDialog.CarPurchased += (s, args) => BuyCar(Racer, carDialog.Price);
             DialogResult result = carDialog.ShowDialog();
-
-            if (result != DialogResult.OK)
-            {
-                // User clicked the "Cancel" button or closed the dialog
-                // Perform further actions if needed
-            }
         }
 
         public void BuyCar(Racer racer, int carPrice)
         {
 
-            
-            if (carPrice == 5 && racer.CheckCarExists("Ford F150")== true)
+            if (carPrice == 5 && racer.CheckCarExists("Ford F150"))
             {
                 MessageBox.Show("You already own this car!");
                 selectedCarValue = 1;
@@ -104,31 +85,34 @@ namespace Car_Racing_Game_MOO_ICT
             }
             if (racer.Coins >= carPrice)
             {
-                // Perform buy car logic here
-                // Deduct the car price from the racer's coins
                 racer.Coins -= carPrice;
-                // Update the racer's coin count in your application
 
                 MessageBox.Show("Car purchased! Remaining coins: " + racer.Coins);
 
-                // Set the value of selectedCarValue based on the purchased car
+                txtCoins.Text = "Coins: " + racer.Coins;
+
                 if (carPrice == 5)
                 {
-                    selectedCarValue = 1; // Ford F150
+                    selectedCarValue = 1; 
                     racer.PurchasedCars.Add("Ford F150");
+                    button2.Enabled = true;
                 }
                 else if (carPrice == 100)
                 {
-                    selectedCarValue = 2; // Ford Mustang
+                    selectedCarValue = 2; 
                     racer.PurchasedCars.Add("Ford Mustang");
+                    button3.Enabled = true;
+
                 }
                 else if (carPrice == 300)
                 {
-                    selectedCarValue = 3; // Lotus F1
+                    selectedCarValue = 3; 
                     racer.PurchasedCars.Add("Lotus F1");
+                    button4.Enabled = true;
+
                 }
 
-                racer.AddCarsToFile(); // Write the purchased cars to the file
+                racer.AddCarsToFile(); 
             }
             else
             {
@@ -145,9 +129,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             if (Racer.Coins >= carPrice)
             {
-                // Deduct the car price from the racer's coins
                 Racer.Coins -= carPrice;
-                // Update the racer's coin count in your application
 
                 MessageBox.Show("Car purchased! Remaining coins: " + Racer.Coins);
             }
@@ -162,7 +144,7 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 Game game = new Game(Racer);
                 game.Show();
-                game.changePlayerCar(this); // Pass the current Garage object
+                game.changePlayerCar(this); 
 
                 this.Close();
             }
@@ -177,7 +159,60 @@ namespace Car_Racing_Game_MOO_ICT
             return selectedCarValue;
         }
 
+        
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Racer.CheckCarExists("Ford F150"))
+            {
+                selectedCarValue = 1;
+                Game game = new Game(Racer);
+                game.Show();
+                game.changePlayerCar(this); 
 
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You need to buy car before choosing it.");
+                button2.Enabled= false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Racer.CheckCarExists("Ford Mustang"))
+            {
+                selectedCarValue = 2;
+                Game game = new Game(Racer);
+                game.Show();
+                game.changePlayerCar(this); 
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You need to buy car before choosing it.");
+                button3.Enabled = false;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (Racer.CheckCarExists("Lotus F1"))
+            {
+                selectedCarValue = 3;
+                Game game = new Game(Racer);
+                game.Show();
+                game.changePlayerCar(this); 
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You need to buy car before choosing it.");
+                button4.Enabled = false;
+            }
+        }
     }
 }

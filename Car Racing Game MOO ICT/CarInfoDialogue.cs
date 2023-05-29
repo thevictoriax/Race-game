@@ -64,24 +64,20 @@ namespace Car_Racing_Game_MOO_ICT
         {
             if (Coins >= Price)
             {
-                // Deduct the car price from the coins
                 Coins -= Price;
-                // Update the coin count in your application
-
-                //MessageBox.Show("Car purchased! Remaining coins: " + Coins);
+                
                 CarPurchased?.Invoke(this, EventArgs.Empty);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                //MessageBox.Show("Insufficient coins to buy the car!");
+                MessageBox.Show("Insufficient coins to buy the car!");
                 this.DialogResult = DialogResult.None;
             }
         }
 
 
-        // Event handler for cancel button click
         private void CancelButton_Click(object sender, EventArgs e)
         {
 

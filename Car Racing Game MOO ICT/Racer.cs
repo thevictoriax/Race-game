@@ -8,7 +8,6 @@ using static System.Windows.Forms.LinkLabel;
 
 namespace Car_Racing_Game_MOO_ICT
 {
-    //add icomparable
     public class Racer
     {
         public string Name { get; set; }

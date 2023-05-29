@@ -98,7 +98,7 @@
             // 
             this.AI1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AI1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.carGreen;
-            this.AI1.Location = new System.Drawing.Point(167, 76);
+            this.AI1.Location = new System.Drawing.Point(178, 76);
             this.AI1.Margin = new System.Windows.Forms.Padding(4);
             this.AI1.Name = "AI1";
             this.AI1.Size = new System.Drawing.Size(50, 101);
@@ -110,7 +110,7 @@
             // award
             // 
             this.award.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.bronze;
-            this.award.Location = new System.Drawing.Point(270, 271);
+            this.award.Location = new System.Drawing.Point(249, 273);
             this.award.Margin = new System.Windows.Forms.Padding(4);
             this.award.Name = "award";
             this.award.Size = new System.Drawing.Size(250, 100);
@@ -196,7 +196,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Try not to hit :)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // gameTimer
             // 
@@ -213,7 +213,7 @@
             this.txtCoins.TabIndex = 4;
             this.txtCoins.Text = "Coins: 0";
             this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtCoins.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // Game
             // 

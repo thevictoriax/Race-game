@@ -76,7 +76,6 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Racer.cs" />
-    <Compile Include="RacersContainer.cs" />
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Racers.txt" />
+    <None Include="Resources\greytruck.PNG" />
+    <None Include="Resources\greymustang.png" />
+    <None Include="Resources\greyformula.png" />
     <None Include="Resources\3306.png" />
     <None Include="Resources\formula.png" />
     <None Include="Resources\mustang %282%29.png" />

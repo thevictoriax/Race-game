@@ -22,11 +22,6 @@ namespace Car_Racing_Game_MOO_ICT
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void playbutton_Click(object sender, EventArgs e)
         {
             Login racer = new Login();
@@ -42,7 +37,6 @@ namespace Car_Racing_Game_MOO_ICT
             racer.Show();
             this.Hide();
             
-
         }
     }
 }
